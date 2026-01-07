@@ -15,11 +15,11 @@ interface WishItemProps {
 
 const WishItem: React.FC<WishItemProps> = ({
   
-  id={item?.id},
-  name={item?.title},
-  price={item?.price},
-  imageUrl={item?.image},
-  slug={item?.slug},
+  id={item?.id};
+  name={item?.title};
+  price={item?.price};
+  imageUrl={item?.image};
+  slug={item?.slug};
 }) => {
   return (
     <div className="flex items-center gap-x-4 border rounded-md p-4 shadow-sm bg-white max-w-md">
