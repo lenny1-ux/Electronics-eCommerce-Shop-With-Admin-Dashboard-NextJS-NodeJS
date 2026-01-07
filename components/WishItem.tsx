@@ -9,15 +9,17 @@ interface WishItemProps {
   name: string;
   price: number;
   imageUrl?: string;
-  onRemove?: (id: string) => void; // optional callback to remove item
+  slug?: string;          // added optional slug
+  onRemove?: (id: string) => void;
 }
 
 const WishItem: React.FC<WishItemProps> = ({
-  id,
-  name,
-  price,
-  imageUrl,
-  onRemove,
+  
+  id={item?.id},
+  name={item?.title},
+  price={item?.price},
+  imageUrl={item?.image},
+  slug={item?.slug},
 }) => {
   return (
     <div className="flex items-center gap-x-4 border rounded-md p-4 shadow-sm bg-white max-w-md">
