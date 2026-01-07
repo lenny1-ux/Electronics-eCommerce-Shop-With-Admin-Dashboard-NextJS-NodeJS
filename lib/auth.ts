@@ -1,4 +1,5 @@
 import { NextAuthOptions } from "next-auth";
+import type { NextAuthConfig } from "next-auth";
 import { Account, User as AuthUser } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import bcrypt from "bcryptjs";
@@ -113,3 +114,10 @@ export const authOptions: NextAuthOptions = {
   secret: process.env.NEXTAUTH_SECRET,
   debug: process.env.NODE_ENV === "development",
 };
+
+export const {
+  handlers: authHandlers,
+  auth,
+  signIn,
+  signOut,
+} = NextAuth(authOptions);
